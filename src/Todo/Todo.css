@@ -142,3 +142,25 @@
 .list li:has(input:checked) label:hover::before {
   background: hsl(200, 100%, 30%);
 }
+
+.quantity_input{
+  width: 49px;
+
+}
+.quantity_minus{
+  text-decoration: none;
+  padding: 8px;
+  width: 24px;
+  border-style: dotted;
+  border: black solid ;
+  cursor: pointer;
+}
+
+.quantity_plus{
+  width: 40px;
+  padding: 8px;
+  border-style: dotted;
+  border: black solid ;
+  cursor: pointer;
+  text-decoration: none;
+}

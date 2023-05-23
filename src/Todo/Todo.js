@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import "./Todo.css";
 import NewTodoForm from './NewTodoForm';
+import { useDispatch, useSelector } from 'react-redux';
+import { inNumber, DecNumber } from '../Actions/indexxx';
 
 export default function Todo() {
+  const dispatch = useDispatch();
   const [todos, setTodos] = useState([]);
+  const myState = useSelector((state) => state.changeTheNumber)
 
   function addTodo(title) {
     setTodos(currentTodos => [
@@ -56,8 +60,12 @@ export default function Todo() {
             </li>
           ))}
         </ul>
-        <div>
-            
+
+        <div className='quantity'>
+          <a className='quantity_minus' title='Decrement'onClick={() => dispatch(DecNumber())}><span>-</span></a>
+          <input type="text" className='quantity_input' value={myState} />
+          <a className='quantity_plus' title='Increment' onClick={() => dispatch(inNumber())}><span>+</span></a>
+
         </div>
       </div>
     </div>
